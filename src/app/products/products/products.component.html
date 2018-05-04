@@ -1,0 +1,22 @@
+<div class="products-component">
+  <test-app-header [title]="'LIST'"></test-app-header>
+  <test-app-sub-header [isSelected]="isSelectedItem" (createEvent)="createHandler($event)" (removeEvent)="removeHandler($event)"></test-app-sub-header>
+  <div class="products-content">
+    <div class="list">
+      <test-app-item *ngFor="let i of items"
+                  (moreEvent)="onMoreHandler($event)"
+                  (selectEvent)="selectedItemHandle($event)"
+                  [moreId]="isMoreId"
+                  [item]="i">
+      </test-app-item>
+    </div>
+    <div class="paginator">
+      <mat-paginator  [length]="itemTotal"
+                      [pageSize]="10"
+                      [pageIndex]="pageIndex"
+                      [pageSizeOptions]="[10, 20, 50]"
+                      (page)="onPaginator($event)">
+      </mat-paginator>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+.menu-component {
+    height: calc(100vh - 85px);
+    width: 150px;
+    padding: 15px;
+    border-right: 1px solid #BDBDBD;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 40px;
+    padding-left: 15px;
+    border-left: 2px solid #BDBDBD;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */ 
+    cursor: pointer;
+    font-family: 'Roboto-Regular';
+    outline: none;
+}
+
+.item.active {
+    border-left: 2px solid #757575;
+    color: #757575;
+}

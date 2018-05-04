@@ -1,0 +1,57 @@
+<div class="change-pass-dialog">
+  <test-app-header [title]="'CHANGE PASSWORD'"></test-app-header>
+  <div class="change-pass-content">
+    <form class="pass-form" [formGroup]="passForm">
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Current Password" [formControl]="oldPasswordFormControl">
+        <mat-error *ngIf="oldPasswordFormControl.hasError('required')">
+          Current password is
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Password" [formControl]="passwordFormControl">
+        <mat-error *ngIf="passwordFormControl.hasError('required')">
+          Password is
+          <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="passwordFormControl.hasError('maxlength')">
+          Maximum
+          <strong>16 character</strong>
+        </mat-error>
+        <mat-error *ngIf="passwordFormControl.hasError('minlength')">
+          Minimum
+          <strong>6 character</strong>
+        </mat-error>
+        <mat-error *ngIf="passwordFormControl.hasError('pattern')">
+          Must be only
+          <strong>[a-zA-Z0-9]</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input type="password" matInput placeholder="Confirm password" [formControl]="confirmPasswordFormControl">
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('matcher')">
+          Password
+          <strong>does not match</strong>
+        </mat-error>
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('required')">
+          Password is
+          <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('maxlength')">
+          Maximum
+          <strong>16 character</strong>
+        </mat-error>
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('minlength')">
+          Minimum
+          <strong>6 character</strong>
+        </mat-error>
+        <mat-error *ngIf="confirmPasswordFormControl.hasError('pattern')">
+          Must be only
+          <strong>[a-zA-Z0-9]</strong>
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+  <test-app-footer [btnName]="'APPLY'" [notLine]="true" (btnEvent)="apply($event)"></test-app-footer>
+</div>

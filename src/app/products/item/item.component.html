@@ -1,0 +1,38 @@
+<mat-card *ngIf="item" style="margin: 10px">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image">
+      <mat-checkbox class="checkbox-element"
+                    color="primary"
+                    disableRipple="true"
+                    (change)="onSelect(item)"
+                    [checked]="item.isChecked">
+      </mat-checkbox>
+    </div>
+  </mat-card-header>
+  <mat-card-content >
+
+        <div class="values">
+          <div class="col">
+            <p class="fild-title simple-text">No:</p>
+            <p class="fild-value simple-text">{{item.number}}</p>
+          </div>
+          <div class="col">
+            <p class="fild-title simple-text">Name:</p>
+            <p class="fild-value simple-text">{{item.name}}</p>
+          </div>
+          <div class="col">
+            <p class="fild-title simple-text">Price:</p>
+            <p class="fild-value simple-text">{{item.price | currency}}</p>
+          </div>
+          <div class="col" *ngIf="moreId === item._id">
+            <p class="fild-title simple-text">Desc:</p>
+            <p class="fild-value simple-text">{{item.desc}}</p>
+          </div>
+        </div>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="edit(item)" mat-raised-button >EDIT</button>
+    <button (click)="more(item._id)" mat-raised-button>{{moreId === item._id ? 'HIDE' : 'MORE'}}</button>
+  </mat-card-actions>
+</mat-card>

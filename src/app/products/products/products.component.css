@@ -1,0 +1,23 @@
+.header-title {
+    color: #424242;
+    font-family: Roboto-Regular;
+    margin: 15px 10px;
+    padding: 0 0 10px 15px;
+    font-size: 16px;
+    border-bottom: 1px solid #757575;
+}
+
+.calendar {
+    height: 500px;
+}
+
+.products-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list {
+    overflow: scroll;
+    height: calc(100vh - 160px);
+}

@@ -1,0 +1,51 @@
+.login-component {
+    height: calc(100vh - 5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-start;
+}
+
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+}
+
+.submit-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+h1.title {
+    margin: 15px 0;
+    font-family: 'Roboto-Regular';
+}
+
+.mat-raised-button.mat-primary, .mat-fab.mat-primary, .mat-mini-fab.mat-primary {
+    color: #FAFAFA;
+    margin: 0 5px;
+}
+
+.submit-btn {
+    margin: 15px 0;
+}
+
+.footer-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

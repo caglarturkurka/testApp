@@ -1,0 +1,41 @@
+<div class="profile-component">
+  <test-app-header [title]="'PROFILE'"></test-app-header>
+  <div class="profile-content">
+      <form class="profile-form" [formGroup]="profileForm">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="First Name" [formControl]="firstNameFormControl">
+          <mat-error *ngIf="firstNameFormControl.hasError('maxlength') && !firstNameFormControl.hasError('required')">
+            Maximum
+            <strong>255 character</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Last Name" [formControl]="lastNameFormControl">
+          <mat-error *ngIf="lastNameFormControl.hasError('maxlength') && !lastNameFormControl.hasError('required')">
+            Maximum
+            <strong>255 character</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Email" [formControl]="emailFormControl">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Phone Number" [textMask]="{mask: phoneMask}" [formControl]="phoneFormControl">
+          <mat-error *ngIf="phoneFormControl.hasError('pattern') && !phoneFormControl.hasError('required')">
+            Please enter a valid phone number
+          </mat-error>
+        </mat-form-field>
+      </form>
+    <div class="change-password">
+      <button (click)="changePassword()" mat-raised-button>CHANGE PASSWORD</button>
+    </div>
+  </div>
+  <test-app-footer [btnName]="'SAVE'" (btnEvent)="create($event)"></test-app-footer>
+</div>

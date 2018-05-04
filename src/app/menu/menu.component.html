@@ -1,0 +1,14 @@
+<test-app-header [title]="user.email"></test-app-header>
+<div class="menu-component">
+  <div class="menu-items">
+    <div routerLink="/dashboard/products" class="item" [ngClass]="{'active': activeRoute === '/dashboard' || activeRoute === '/dashboard/products'}">
+      <p class="item-name simple-text">LIST</p>
+    </div>
+    <div routerLink="/dashboard/profile" class="item" [ngClass]="{'active': activeRoute === '/dashboard/profile'}">
+      <p class="item-name simple-text">PROFILE</p>
+    </div>
+    <div (click)="logOut()" routerLink="/auth" class="item">
+      <p class="item-name simple-text">LOGOUT</p>
+    </div>
+  </div>
+</div>

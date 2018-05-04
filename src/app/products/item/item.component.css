@@ -1,0 +1,29 @@
+.checkbox-element {
+    margin: 15px;
+}
+
+.col {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    margin: 0 10px;
+}
+
+p.fild-title.simple-text {
+    font-family: Roboto-Bold;
+    width: 60px;
+}
+
+p.fild-title.simple-text,
+p.fild-value.simple-text {
+    margin: 5px;
+}
+
+p.fild-value.simple-text {
+    font-family: Roboto-Regular;
+}
+
+button.mat-raised-button {
+    margin: 4px 0;
+}

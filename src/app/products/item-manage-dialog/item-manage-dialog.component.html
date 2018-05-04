@@ -1,0 +1,46 @@
+<div class="item-manage-dialog">
+    <test-app-header [title]="'MANAGE'"></test-app-header>
+    <div class="item-manage-content">
+      <form class="item-manage-form" [formGroup]="itemForm">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Name" [formControl]="nameFormControl">
+          <mat-error *ngIf="nameFormControl.hasError('required')">
+            Name is
+            <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="nameFormControl.hasError('maxlength')">
+            Maximum
+            <strong>255 character</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Price" [formControl]="priceFormControl">
+          <mat-error *ngIf="priceFormControl.hasError('required')">
+            Price is
+            <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="priceFormControl.hasError('pattern')">
+            Invalid currency format
+            <strong>Example 1,234.24 | 234.24 | 23 </strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Description"
+                    [formControl]="descFormControl"
+                    matTextareaAutosize
+                    matAutosizeMinRows="1"
+                    matAutosizeMaxRows="10">
+          </textarea>
+          <mat-error *ngIf="descFormControl.hasError('required')">
+            Description is
+            <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="descFormControl.hasError('maxlength')">
+            Maximum
+            <strong>1000 character</strong>
+          </mat-error>
+        </mat-form-field>
+      </form>
+    </div>
+    <test-app-footer [btnName]="data ? 'APPLY' : 'CREATE'" [notLine]="true" (btnEvent)="apply($event)"></test-app-footer>
+  </div>

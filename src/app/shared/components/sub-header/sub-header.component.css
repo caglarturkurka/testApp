@@ -1,0 +1,31 @@
+.sub-header {
+    height: 50px;
+    border-bottom: 1px solid #BDBDBD;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    color: #424242;
+    padding: 0 15px;
+}
+
+mat-form-field.example-form-field {
+    width: 100%;
+    margin: 0 15px;
+}
+
+button.ng-star-inserted {
+    border: none;
+}
+
+i.material-icons.close {
+    color: #757575;
+    cursor: pointer;
+    margin: 0 10px 0 0;
+}
+
+i.material-icons.search {
+    margin: 0 0 0 15px;
+    color: #757575;
+}
+
